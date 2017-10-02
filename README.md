@@ -1,5 +1,5 @@
-# Vue.js Tutorial
-for __OST-iMed__ by Outsource
+# Full Stack Development Course
+for __OST-iMed__ by [@acoshift](https://acoshift.me)
 
 ## Repository structure
 * โน้ตจะอยู่ในโฟลเดอร์ lecture-notes/ แยกตามวัน หรือเรื่อง
