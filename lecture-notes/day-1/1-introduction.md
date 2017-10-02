@@ -2,7 +2,7 @@
 ## Outline
 * **ES.Next** - Syntax
 * **Git** - Fundamentals
-* **Docker**
+* **Docker** - Installation & Fundamentals
 
 ## Lecture Notes
 ### Git
