@@ -31,8 +31,9 @@ app.use('/', index)
 
 // Protected Path
 app.use('/timestamps', function (req, res, next) {
-  if (req.headers.token) {
-    authController.authorizeUser(req.headers.token).then(user => {
+  let token = req.header('X-Token')
+  if (token) {
+    authController.authorizeUser(token).then(user => {
       if (user) {
         req.currentUser = user
         next()

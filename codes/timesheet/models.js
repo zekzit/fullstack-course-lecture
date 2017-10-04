@@ -4,7 +4,7 @@ const sequelize = new Sequelize('workshop', 'mee', 'password', {
     dialect: 'postgres'
 })
 const cryptoUtil = require('./utils/cryptoUtil')
-const SALT = 'SaLtZ'
+const config = require('./config')
 
 const TimestampType = {
     CHECKIN: 1,
@@ -35,12 +35,12 @@ const Timestamp = sequelize.define('timestamp', {
 
 module.exports = { User, Timestamp, TimestampType }
 
-sequelize.sync({force:true}).then(() => User.create({
+sequelize.sync({force:false}).then(() => User.create({
     username: 'admin',
-    password: cryptoUtil.sha512('demo', SALT).passwordHash
+    password: cryptoUtil.sha512('demo', config.SALT).passwordHash
   })).then(() => {
     User.create({
         username: 'user',
-        password: cryptoUtil.sha512('demo', SALT).passwordHash
+        password: cryptoUtil.sha512('demo', config.SALT).passwordHash
       }) 
   })

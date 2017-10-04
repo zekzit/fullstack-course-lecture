@@ -1,9 +1,8 @@
 
 const User = require('../models').User
+const config = require('../config')
 const cryptoUtil = require('../utils/cryptoUtil')
 const authController = {}
-
-const SALT = 'SaLtZ'
 
 authController.authenticateUser = (username, password) => {
     return new Promise((resolve, reject) => {
@@ -15,7 +14,7 @@ authController.authenticateUser = (username, password) => {
             result.status = 400
             result.payload = 'No username or password specified.'
         } else {
-            let hashedPassword = cryptoUtil.sha512(password, SALT).passwordHash
+            let hashedPassword = cryptoUtil.sha512(password, config.SALT).passwordHash
             User.findOne({
                 where: {
                     username: username,
