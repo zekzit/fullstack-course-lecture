@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 var timestampController = require('../controllers/timestamp')
 
-router.get('/:username/history', function(req, res, next) {
-  let username = req.params.username
+router.get('/', function(req, res, next) {
+  let username = req.currentUser.username
   timestampController.history(username).then(result => {
     res.status(200).send(result)
   }).catch(err => {
@@ -11,8 +11,8 @@ router.get('/:username/history', function(req, res, next) {
   })
 })
 
-router.post('/:username/checkin', function(req, res, next) {
-  let username = req.params.username
+router.post('/checkin', function(req, res, next) {
+  let username = req.currentUser.username
   timestampController.checkin(username).then(result => {
     res.status(200).send(result)
   }).catch(err => {
@@ -20,8 +20,8 @@ router.post('/:username/checkin', function(req, res, next) {
   })
 })
 
-router.post('/:username/checkout', function(req, res, next) {
-  let username = req.params.username
+router.post('/checkout', function(req, res, next) {
+  let username = req.currentUser.username
   timestampController.checkout(username).then(result => {
     res.status(200).send(result)
   }).catch(err => {

@@ -1,18 +1,18 @@
 <template>
   <div id="app">
+    <p>
+      <router-link :to="{ name: 'Hello', query: { name: 'query'} }">Home</router-link>
+      <router-link :to="{ name: 'Timestamps' }">Timestamps</router-link>
+      <router-link :to="{ name: 'Playground' }">Playground</router-link>
+    </p>
     <img src="./assets/logo.png">
-    <MeePlayground></MeePlayground>
+    <router-view />
   </div>
 </template>
 
 <script>
-import MeePlayground from './components/MeePlayground.vue'
-
 export default {
-  name: 'app',
-  components: {
-    MeePlayground
-  }
+  name: 'app'
 }
 </script>
 
