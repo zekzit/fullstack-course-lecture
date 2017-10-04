@@ -29,3 +29,9 @@ Vue.filter('fromNow', (date) => {
   ticker.tick
   return moment(date).fromNow()
 })
+
+Vue.filter('formatDate', (date) => {
+  ticker.tick
+  return moment(date).format('MMM Do YYYY, h:mm:ss a')
+})
+

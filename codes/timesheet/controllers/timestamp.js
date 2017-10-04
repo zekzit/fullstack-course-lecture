@@ -40,7 +40,10 @@ timestampController.history = (username) => {
             return Timestamp.findAll({
                 where: {
                     userId: user.id
-                }
+                },
+                order: [
+                    ['timestamp', 'DESC']
+                ]
             })
         }).then(timestampHistories => {
             resolve(timestampHistories)
