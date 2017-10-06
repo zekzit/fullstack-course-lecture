@@ -13,5 +13,5 @@ for __OST-iMed__ by [@acoshift](https://acoshift.me)
 * **Day 2** Backend development with Node.js + Express
 * **Day 3** Frontend development with Vue.js
 * **Day 4** Microservices + nginx + Performance
-* **Day 5** Agile + TDD
+* **Day 5** Agile + TDD + CI/CD
 
