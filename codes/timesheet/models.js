@@ -35,7 +35,7 @@ const Timestamp = sequelize.define('timestamp', {
 
 module.exports = { User, Timestamp, TimestampType }
 
-sequelize.sync({force:false}).then(() => User.create({
+sequelize.sync({force:true}).then(() => User.create({
     username: 'admin',
     password: cryptoUtil.sha512('demo', config.SALT).passwordHash
   })).then(() => {
