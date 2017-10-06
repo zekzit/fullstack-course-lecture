@@ -1,5 +1,8 @@
 # Afternoon Session - October 6, 2017
 ## Outline
+* Test with Mocha, Chai and more..
+  * Unit Test
+  * Integration Test
 
 ## Lecture Notes
 ### เกร็ดเล็กเกร็ดน้อย
